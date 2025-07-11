@@ -1,0 +1,5 @@
+[pull]
+	rebase = true
+[user]
+	email = carlos.marques@grupo-3c.com
+	name = Carlos Marques
