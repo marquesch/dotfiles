@@ -115,18 +115,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)
 source <(docker completion zsh)
 source <(fzf --zsh)
 
-# asdf
-. "$HOME/.asdf/asdf.sh"
-
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
-
-path+=/usr/local/go/bin
-
-export PATH
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
