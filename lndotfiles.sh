@@ -25,7 +25,6 @@ dotfiles_dir=$(pwd)
 files_to_link=(
     ".zshrc"
     ".vimrc"
-    ".gitconfig"
     ".p10k.zsh"
     ".wezterm.lua" 
 )
