@@ -112,8 +112,11 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # docker completion
 source <(docker completion zsh)
 source <(fzf --zsh)
 
 source $ZSH/oh-my-zsh.sh
+
