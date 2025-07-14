@@ -32,7 +32,7 @@ config = {
   background = {
     {
       source = {
-        File = os.getenv("HOME").."/.config/wezterm/bg.jpg",
+        File = os.getenv("HOME").."/.config/wezterm/bg.jpeg",
       },
       hsb = {
         hue = 1.0,
