@@ -16,7 +16,7 @@ config = {
   font_size = 11,
   font = wezterm.font("MesloLGS Nerd Font Mono"),
   enable_tab_bar = false,
-  color_scheme = 'Afterglow',
+  color_scheme = 'nord',
   keys = {
     { key = 'LeftArrow', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Left'} },
     { key = 'DownArrow', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Down'} },
@@ -29,26 +29,7 @@ config = {
     top = 0,
     bottom = 0,
   },
-  background = {
-    {
-      source = {
-        File = os.getenv("HOME").."/.config/wezterm/bg.jpeg",
-      },
-      hsb = {
-        hue = 1.0,
-        saturation = 1.02,
-        brightness = 0.25,
-      },
-    },
-    {
-      source = {
-        Color = "#282c35",
-      },
-      width = "100%",
-      height = "100%",
-      opacity = 0.75,
-    },
-  },
+  window_background_opacity = 0.95,
   hyperlink_rules = {
     {
       regex = "\\((\\w+://\\S+)\\)",
