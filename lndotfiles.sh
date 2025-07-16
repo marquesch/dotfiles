@@ -20,7 +20,7 @@ link_file() {
     return 0
 }
 
-dotfiles_dir=$(pwd)
+dotfiles_dir=$(dirname "$(readlink -f "$0")")
 
 files_to_link=(
     ".zshrc"
