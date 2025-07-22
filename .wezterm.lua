@@ -18,11 +18,15 @@ config = {
   enable_tab_bar = false,
   color_scheme = 'nord',
   keys = {
-    { key = 'LeftArrow', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Left'} },
-    { key = 'DownArrow', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Down'} },
-    { key = 'RightArrow', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Right'} },
-    { key = 'UpArrow', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Up'} }
-},
+    { key = 'h', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Left'} },
+    { key = 'h', mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection("Left") },
+    { key = 'j', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Down'} },
+    { key = 'j', mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection("Down") },
+    { key = 'l', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Right'} },
+    { key = 'l', mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection("Right") },
+    { key = 'k', mods = 'SHIFT|ALT', action = wezterm.action.SplitPane { direction = 'Up'} },
+    { key = 'k', mods = 'SHIFT|CTRL', action = wezterm.action.ActivatePaneDirection("Up") }
+  },
   window_padding = {
     left = 3,
     right = 3,
