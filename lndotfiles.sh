@@ -37,6 +37,5 @@ for file_name in "${files_to_link[@]}"; do
 done
 
 mkdir -p "$HOME/.config/nvim"
-touch "$HOME/.config/nvim/init.vim"
-link_file "$dotfiles_dir/.vimrc" "$HOME/.config/nvim/init.vim"
+link_file "$dotfiles_dir/init.lua" "$HOME/.config/nvim/init.lua"
 
