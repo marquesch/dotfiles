@@ -1,5 +1,3 @@
-set rtp+=~/.fzf
-
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
@@ -23,7 +21,4 @@ set ttyfast                 " Speed up scrolling in Vim
 
 set nowrap                  "no line wrapping
 set nu                      "line numbers
-
-nnoremap <C-p> :Files<CR>
-nnoremap <C-v> "*y
 

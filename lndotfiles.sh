@@ -21,7 +21,6 @@ link_file() {
 }
 
 dotfiles_dir=$(dirname "$(readlink -f "$0")")
-echo $dotfiles_dir
 
 files_to_link=(
     ".zshrc"
