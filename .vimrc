@@ -26,3 +26,4 @@ set nu                      "line numbers
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-v> "*y
+

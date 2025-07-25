@@ -21,6 +21,7 @@ link_file() {
 }
 
 dotfiles_dir=$(dirname "$(readlink -f "$0")")
+echo $dotfiles_dir
 
 files_to_link=(
     ".zshrc"
@@ -38,5 +39,5 @@ done
 
 mkdir -p "$HOME/.config/nvim"
 touch "$HOME/.config/nvim/init.vim"
-link_file ".vimrc" "$HOME/.config/nvim/init.vim"
+link_file "$dotfiles_dir/.vimrc" "$HOME/.config/nvim/init.vim"
 
