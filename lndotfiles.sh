@@ -20,7 +20,9 @@ link_file() {
     return 0
 }
 
-dotfiles_dir=$(dirname "$(readlink -f "$0")")
+DOTFILES_DIR=$(dirname "$(readlink -f "$0")")
+SOURCE_CONFIG_DIR="$DOTFILES_DIR/.config"
+CONFIG_DIR="$HOME/.config"
 
 files_to_link=(
     ".zshrc"
@@ -30,12 +32,15 @@ files_to_link=(
 )
 
 for file_name in "${files_to_link[@]}"; do
-    source_file="$dotfiles_dir/$file_name"
+    source_file="$DOTFILES_DIR/$file_name"
     destination_file="$HOME/$file_name"
     
     link_file "$source_file" "$destination_file"
 done
 
-mkdir -p "$HOME/.config/nvim"
-link_file "$dotfiles_dir/init.lua" "$HOME/.config/nvim/init.lua"
+mkdir -p "$CONFIG_DIR"
 
+for dir in "$SOURCE_CONFIG_DIR"/*; do
+    item_name=$(basename "$item")
+    ln -s -f "$dir" "$CONFIG_DIR/$item_name"
+done
