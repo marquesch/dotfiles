@@ -382,7 +382,9 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sf", fzflua.files, { desc = "[S]earch [F]iles (fzf-lua)" })
 			vim.keymap.set("n", "<leader>ss", fzflua.commands, { desc = "[S]earch [S]elect Commands (fzf-lua)" }) -- Using commands as a general "select"
 			vim.keymap.set("n", "<leader>sw", fzflua.grep_cword, { desc = "[S]earch current [W]ord (fzf-lua)" })
-			vim.keymap.set("n", "<leader>sg", fzflua.live_grep_resume, { desc = "[S]earch by [G]rep (fzf-lua)" }) -- Live grep
+			vim.keymap.set("n", "<leader>sg", function()
+				fzflua.live_grep({ resume = true })
+			end, { desc = "[S]earch by [G]rep (fzf-lua)" }) -- Live grep
 			vim.keymap.set(
 				"n",
 				"<leader>sd",
@@ -405,11 +407,11 @@ require("lazy").setup({
 				})
 			end, { desc = "[/] Fuzzily search in current buffer (fzf-lua)" })
 
-			vim.keymap.set("n", "<leader>s/", function()
-				fzflua.live_grep_open_files({
-					prompt = "Live Grep in Open Files:",
-				})
-			end, { desc = "[S]earch [/] in Open Files (fzf-lua)" })
+			-- vim.keymap.set("n", "<leader>s/", function()
+			-- 	fzflua.live_grep_open_files({
+			-- 		prompt = "Live Grep in Open Files:",
+			-- 	})
+			-- end, { desc = "[S]earch [/] in Open Files (fzf-lua)" })
 
 			vim.keymap.set("n", "<leader>sn", function()
 				fzflua.files({
@@ -530,7 +532,7 @@ require("lazy").setup({
 
 					-- Fuzzy find all the symbols in your current workspace.
 					--  Similar to document symbols, except searches over your entire project.
-					map("gW", fzflua.lsp_workspace_symbols, "Open Workspace Symbols")
+					map("gW", fzflua.lsp_live_workspace_symbols, "Open Workspace Symbols")
 					-- map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Open Workspace Symbols")
 
 					-- Jump to the type of the word under your cursor.
@@ -662,6 +664,37 @@ require("lazy").setup({
 				},
 				jedi_language_server = {
 					capabilities = capabilities,
+					init_options = {
+						codeAction = {
+							nameExtractVariable = "jls_extract_var",
+							nameExtractFunction = "jls_extract_def",
+						},
+						completion = { disableSnippets = false, resolveEagerly = false, ignorePatterns = {} },
+						diagnostics = { enable = true, didOpen = true, didChange = true, didSave = true },
+						hover = {
+							enable = true,
+							disable = {
+								class = { all = false, names = {}, fullNames = {} },
+								["function"] = { all = false, names = {}, fullNames = {} },
+								instance = { all = false, names = {}, fullNames = {} },
+								keyword = { all = false, names = {}, fullNames = {} },
+								module = { all = false, names = {}, fullNames = {} },
+								param = { all = false, names = {}, fullNames = {} },
+								path = { all = false, names = {}, fullNames = {} },
+								property = { all = false, names = {}, fullNames = {} },
+								statement = { all = false, names = {}, fullNames = {} },
+							},
+						},
+						jediSettings = { autoImportModules = {}, caseInsensitiveCompletion = true, debug = false },
+						markupKindPreferred = "markdown",
+						workspace = {
+							extraPaths = {},
+							symbols = {
+								ignoreFolders = { ".nox", ".tox", ".venv", "__pycache__", "venv" },
+								maxSymbols = 20,
+							},
+						},
+					},
 				},
 				-- clangd = {},
 				-- pyright = {},
