@@ -59,8 +59,8 @@ return { -- Autocompletion
 			preset = "default",
 
 			["<C-CR>"] = { "select_and_accept" },
-			["<C-j>"] = { "select_next" },
-			["<C-k>"] = { "select_prev" },
+			["<C-n>"] = { "select_next" },
+			["<C-p>"] = { "select_prev" },
 
 			-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 			--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
