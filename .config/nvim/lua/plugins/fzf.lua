@@ -23,7 +23,12 @@ return {
 		vim.keymap.set("n", "<leader>sr", fzflua.resume, { desc = "[S]earch [R]esume (fzf-lua)" })
 		vim.keymap.set("n", "<leader><leader>", fzflua.buffers, { desc = "[ ] Find existing buffers (fzf-lua)" })
 
-		vim.keymap.set("n", "<leader>/", fzflua.blines, { desc = "[/] Fuzzily search in current buffer (fzf-lua)" })
+		vim.keymap.set(
+			"n",
+			"<leader>/",
+			fzflua.lgrep_curbuf,
+			{ desc = "[/] Fuzzily search in current buffer (fzf-lua)" }
+		)
 
 		vim.keymap.set("n", "<leader>sn", function()
 			fzflua.files({
