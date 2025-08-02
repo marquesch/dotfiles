@@ -174,17 +174,24 @@ return {
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			gopls = {
-				completeUnimported = true,
-				usePlaceholders = true,
-				analyses = {
-					unusedparams = true,
-					nilness = true,
-					shadow = true,
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						completeUnimported = true,
+						usePlaceholders = true,
+						analyses = {
+							unusedparams = true,
+							nilness = true,
+							shadow = true,
+						},
+						staticcheck = true,
+						gofumpt = true,
+					},
 				},
-				staticcheck = true,
-				gofumpt = true,
 			},
-			bashls = {},
+			bashls = {
+				capabilities = capabilities,
+			},
 			pyright = {
 				capabilities = capabilities,
 			},

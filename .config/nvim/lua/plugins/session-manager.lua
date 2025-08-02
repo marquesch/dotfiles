@@ -8,7 +8,7 @@ return {
 
 		require("session_manager").setup({
 			sessions_dir = Path:new(vim.fn.stdpath("data"), "sessions"),
-			autoload_mode = config.AutoloadMode.CurrentDir,
+			autoload_mode = config.AutoloadMode.Disabled,
 		})
 	end,
 }

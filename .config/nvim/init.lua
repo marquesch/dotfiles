@@ -7,4 +7,6 @@ require("mappings")
 
 require("config.lazy")
 require("config.nord")
+require("config.nvim-tree")
+require("config.alpha")
 require("autocommands")
