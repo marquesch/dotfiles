@@ -123,7 +123,7 @@ return {
 				then
 					map("<leader>th", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-					end, "[T]oggle Inlay [H]ints")
+					end, "Inlay [H]ints")
 				end
 			end,
 		})
@@ -189,12 +189,10 @@ return {
 					},
 				},
 			},
-			bashls = {
-				capabilities = capabilities,
-			},
-			pyright = {
-				capabilities = capabilities,
-			},
+			bashls = { capabilities = capabilities },
+			pyright = { capabilities = capabilities },
+			prettier = { capabilities = capabilities },
+			elixirls = { capabilities = capabilities },
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 			--

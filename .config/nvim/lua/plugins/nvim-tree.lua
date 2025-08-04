@@ -13,7 +13,8 @@ return {
 		},
 		filters = {
 			dotfiles = false,
-			custom = { "\\.git", "venv", "\\.venv" },
+			git_ignored = false,
+			custom = { "\\.git", "venv", "\\.venv", "__pycache__" },
 		},
 	},
 }
