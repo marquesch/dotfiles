@@ -17,9 +17,7 @@ return {
 		vim.keymap.set("n", "<leader>sh", fzflua.help_tags, { desc = "[S]earch [H]elp (fzf-lua)" })
 		vim.keymap.set("n", "<leader>sk", fzflua.keymaps, { desc = "[S]earch [K]eymaps (fzf-lua)" })
 		vim.keymap.set("n", "<leader>sf", fzflua.files, { desc = "[S]earch [F]iles (fzf-lua)" })
-		vim.keymap.set("n", "<leader>sg", function()
-			fzflua.live_grep({ resume = true })
-		end, { desc = "[S]earch by [G]rep (fzf-lua)" }) -- Live grep
+		vim.keymap.set("n", "<leader>sg", fzflua.live_grep, { desc = "[S]earch by [G]rep (fzf-lua)" })
 		vim.keymap.set("n", "<leader>sr", fzflua.resume, { desc = "[S]earch [R]esume (fzf-lua)" })
 		vim.keymap.set("n", "<leader><leader>", fzflua.buffers, { desc = "[ ] Find existing buffers (fzf-lua)" })
 
