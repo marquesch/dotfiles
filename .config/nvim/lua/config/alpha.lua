@@ -22,7 +22,7 @@ local buttons = {
 }
 
 if session_manager.current_dir_session_exists() then
-	local button = dashboard.button("e", "   > Load last session", ":SessionManager load_current_dir_session<CR>")
+	local button = dashboard.button("s", "   > Load last session", ":SessionManager load_current_dir_session<CR>")
 	table.insert(buttons, 4, button)
 end
 
