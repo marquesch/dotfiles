@@ -6,6 +6,7 @@ if wezterm.config_builder then
 end
 
 config = {
+	swallow_mouse_click_on_window_focus = true,
 	automatically_reload_config = true,
 	window_close_confirmation = "NeverPrompt",
 	adjust_window_size_when_changing_font_size = false,
