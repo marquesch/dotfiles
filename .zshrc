@@ -121,7 +121,7 @@ DISABLE_AUTO_TITLE="true"
 # docker completion
 source <(docker completion zsh)
 
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS'
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS
 		--color=fg:#878580,bg:#100F0F,hl:#CECDC3
 		--color=fg+:#878580,bg+:#1C1B1A,hl+:#CECDC3
 		--color=border:#AF3029,header:#CECDC3,gutter:#100F0F
