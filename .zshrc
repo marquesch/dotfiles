@@ -121,11 +121,11 @@ DISABLE_AUTO_TITLE="true"
 # docker completion
 source <(docker completion zsh)
 
-# nord fzf colors
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-    --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
-    --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
-    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
-    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS'
+		--color=fg:#878580,bg:#100F0F,hl:#CECDC3
+		--color=fg+:#878580,bg+:#1C1B1A,hl+:#CECDC3
+		--color=border:#AF3029,header:#CECDC3,gutter:#100F0F
+		--color=spinner:#24837B,info:#24837B,separator:#1C1B1A
+		--color=pointer:#AD8301,marker:#AF3029,prompt:#AD8301"
 
 . "$HOME/.cargo/env"
