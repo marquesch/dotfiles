@@ -129,4 +129,3 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS'
 		--color=pointer:#AD8301,marker:#AF3029,prompt:#AD8301"
 
 . "$HOME/.cargo/env"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
