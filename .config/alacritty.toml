@@ -4,6 +4,10 @@ TERM = "xterm-256color"
 [general]
 live_config_reload = true
 
+[terminal.shell]
+program = "tmux"
+args = ["new"]
+
 [window]
 decorations = "none"
 dynamic_padding = false
