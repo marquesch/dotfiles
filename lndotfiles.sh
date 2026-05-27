@@ -28,7 +28,6 @@ files_to_link=(
     ".zshrc"
     ".vimrc"
     ".p10k.zsh"
-    ".wezterm.lua" 
 )
 
 for file_name in "${files_to_link[@]}"; do
@@ -38,7 +37,7 @@ for file_name in "${files_to_link[@]}"; do
     link_file "$source_file" "$destination_file"
 done
 
-mkdir -p "$CONFIG_DIR"
+    mkdir -p "$CONFIG_DIR"
 
 for dir in "$SOURCE_CONFIG_DIR"/*; do
     item_name=$(basename "$item")

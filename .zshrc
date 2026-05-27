@@ -138,3 +138,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(uv generate-shell-completion zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
