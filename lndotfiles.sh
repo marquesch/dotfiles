@@ -28,6 +28,7 @@ files_to_link=(
     ".zshrc"
     ".vimrc"
     ".p10k.zsh"
+    ".tmux.conf"
 )
 
 for file_name in "${files_to_link[@]}"; do
